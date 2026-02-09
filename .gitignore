@@ -1,0 +1,11 @@
+.DS_Store
+.claude/
+.idea/
+*.txt
+!robots.txt
+*.backup
+*.bak*
+check.html
+test-*.html
+IMG_0176.jpeg
+Предпочтения по стилю/

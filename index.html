@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART PROTO — AI Innovation Director</title>
+    <meta name="description" content="Artem Protasov — R&D Director, Head of AI Innovation, Creative Technology Director with 7+ years of experience">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ART PROTO — AI Innovation Director">
+    <meta property="og:description" content="Artem Protasov — R&D Director, Head of AI Innovation, Creative Technology Director with 7+ years of experience">
+    <meta property="og:image" content="OG.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="OG.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+    <!-- Generative Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Scan Lines Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- VHS Chrome -->
+    <div class="vhs-chrome">
+        <div class="vhs-play">
+            <span class="play-icon">▶</span>
+            <span class="play-text">PLAY</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-left">
+            <div class="vhs-indicator">
+                <span class="rec-dot"></span>
+                <span class="rec-text">REC</span>
+            </div>
+            <div class="nav-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">ART_PROTO</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            <a href="CV_[ENG].pdf" target="_blank" class="nav-link nav-link--cv">CV</a>
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-section="01">ABOUT</a>
+            <a href="#projects" class="nav-link" data-section="02">PROJECTS</a>
+            <a href="#contact" class="nav-link" data-section="03">CONTACT</a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-status">
+                <span class="status-dot"></span>
+                <span class="status-text">SYSTEM ONLINE</span>
+            </div>
+            <div class="vhs-timecode" id="timecode">00:00:00</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="label-line"></span>
+                <span class="label-text">AI INNOVATION DIRECTOR</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" data-text="ARTEM">ARTEM</span>
+                <span class="title-line title-line--accent" data-text="PROTASOV">PROTASOV</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="subtitle-prefix">&gt;&gt;</span>
+                Transforming traditional production into high-efficiency AI ecosystems without compromising creative quality
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">7+</span>
+                    <span class="stat-label">YEARS EXP</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">6+</span>
+                    <span class="stat-label">AI PROJECTS</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">30+</span>
+                    <span class="stat-label">BRANDS</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="ascii-terminal">
+                <div class="ascii-header">
+                    <span class="ascii-dot"></span>
+                    <span class="ascii-dot"></span>
+                    <span class="ascii-dot"></span>
+                    <span class="ascii-title">portrait.exe</span>
+                    <span class="ascii-status">▶ RENDERING</span>
+                </div>
+                <div class="ascii-viewport">
+                    <div class="ascii-scanline"></div>
+                    <pre class="ascii-art" id="ascii-portrait">ÏüÇü666666666ÇÇ6ÇÇÞGÞÇÞÞÇ66zü6ÇÞÞÞÅÅgÇÇ6üü6ÏÏÏüÏüüÏü6ü6üÏüÏÏÏÏÏÇÇ6üÏ6üüüüüÏÞÇÞíÏÏzÏÏÏÏÏzÏÏzzzzííííí—
+6ÞGÞGGGGGGGGGÞÞGGÅÇzÏüzÇÞ6ÅüÞÏí{ü66ÇÞgÅÅÅÅÅÅggÞÇÇÇÇÞÞÇÞÞÞGGGGgGÇÞÞGÞG66ÞGÞGgGgÇÇÇÇÇÞÞÇÇÇÇ6ÇÇü6ÇÇÇÇÇí
+üÞGgÞÞGGGÞÞÞÞÇggííÞÅÅÅ6Ï›          {ügÇ—6{ÞÞÅÅÅÆÆÆÅgÞüÇÞÇG6ÞÞÞGÞÞÞÇ6ggÞgG6Þ6üüÇGGÞÞÞÞÞÞÇGÇÇ666ÇÇÇÇ6Ï
+6GGGgÞGGGgÞÇGgÅGÆÆÇí                    Ïí6 {6{ÇÅggÇÆGÆÇGgGÇÞÇÅGGgÅÅÅgÆÆÅÅÅgÆüz{{zzÞ66Þ6ÇÇÇ666ÇÇÇÇGz
+6GGGGGGÞÞGÆÆÆÅÅü›                                íÅÅÅ{ÆgÅÏÇGgÅÅgÇÇ6Çg6Ïz6ügÆÆÆÆÅGGzz66ÇÇüÏÏü6ÇÇ6ÞÇÇÏ
+6ÞÞGggGÅÆÆG— —                                      ››íÅgíGgÅ6ÅÅügÅ—› z        ÅÅgÆÅÞ{ÞüÇÇÇü6zÇÞÇÞG6
+6gGÞüzÞÞü›                                             6› zÇzGG›› Æ         —6{—{   üÞÅÏzÇ66ÞÇÇ66ÞG6
+ÇGÇÞÆÅz                                                  6{Ï              ›{     zgGGz  Ç6zÇüÇ6ÇÞ6Þü
+zÇG{›  ›z6í›                                                   íÆz—{ Åü ›    —›      {íÅg  ÅzgÞÞÞÞGÏ
+ÇÅGz›ÆÆÅÇ ›                                                                             zÏÅí ÏügÅGGÇ
+—ÏüÇzgÏü                                                    {ÅÆÅ—ÅÅGÞÞü—                 ›ü{G—››GÅÅÇ
+{G{üÆgíüí›                                                    ›  {›{    ›   ›              ízÇÅÇ› Æg
+6ÆÏ6G›üzí                                                                         ›          ÏzÏÅü›z
+Ï6{ÅÏgÞ—                                                                                       ÞüÅÆ
+Çg6Þ{Ï{                                                                         {                ÅÏÅ
+zGüü››                                                                                          — ü{
+GÅÏ››6                                                                             {              6›
+ › z—                                               ›—›——› ›                                       z
+ zÏ              í                                ›—›››››››››
+   z›—        Æ{                               ›———————{í{—››—›                     ›
+íG{6        6                              ›››››———{—{——›››››    ›
+—Å  í—                                       › ››››››››—zÏí{{—›—
+        {                                ›››—————{{ízzí{{››  ›
+                                       ›››      ›››     ›—{íÏüí{—›››
+                                       ››››———{{——{{ízüüü{—    ›››
+                                          ›››››——{—————   {66ü{——››——›
+                                      ››››————›———›———{üGü{—›——{íz———›
+ —                                    › ››——››———{—{{{í{——ÇgÆÅÅÇz{üÏz{› ›
+  z                                  ››››››››——————{{——{6ü{              —
+                                 ›—{{{{{{———{———————{—{{›
+    {                                   {{——›——————————›       ›››—{—
+  {{                                      —›——›———————›   ›———››——›››››››
+—z                                          ›››››———›››  ››
+ í›{                             ›                ››
+                                                   ››         —{íí{——
+   ››                                            ›—›
+                                                 {z—                                       ›
+      í›{›                                      ›—{—              ›    ›
+                                                ›{{{›                 ››                        z
+                                                —{íí{   ›         ›››››
+                                                ›{{í{››››—{›      ›  ›››››
+                                                ›—{{— ››››————›——›—————››››
+                                                ›{{{— › ›››—›—{———››———›››
+ ›z                                             —ÏÏí{—— ››———————————›››››  ›
+gÆÆÆÆüzÆ   ›ÏÏÆz       Ï                       ›{{zzí{—›››———›››—————›››››  {
+ÞGÞÇ—   üÆÆÆ6ÇÇ  Æz{íÆÏ ›                      ›{üízz{—    ›————››———›››    í                    ÆÆ6
+GÅÅÅÆÆÆÆÆÆgÅgz —Æz {{                         ››{üííí{—  ›   ››››››››  ›    z    ›        —6ÆÆÆÆGüz
+ÇgggGggÞGGgÅÆÆ{       ÆGÆ›               ›——›››—í{íííÏ{—ííz  ›››—››››      —›      ÆÆÆÆÆÆÆÆÆ  ÇÆÅÅÆÞ
+ÞgggggggggggGÆÞ  ÆíÆgÆÇÇÆ —                 ››››{ííí{íÏí—›  ›››››››››››    —›—              {ÆgggÇGÇ
+ÞggggggggggggÅÆÆ›ÇGÞzíGÆÇ  —          ›          ›››       ››››››› › ›     —  6í           ÅÅÅÅGÇggÞ
+ÇGgggggGGGGGgggÆÇÇgÆÏÅÞÆ                                   ———————››› ›    6—Çz›ÆÆÆÆÆÆÆÆgÆÅÆÆ6ÞggggÇ
+ÇgGGGGGGGGGGGGGgÞÇÞÏÇgÆ6  Æ  —                                  ›—› › ››  —  ÆÏí   íüz›{ üggggGgGGGÇ
+ÞgggGGgggggGGGGggÅÇÏÞÅG—Æ {›››                                    ›› ›››—›     ÅÆÆÆ6ÏÅÅÆÆÅÅggGGgGGGÇ
+ÇGGGGGGGGGGggggGGgÅüÞÅGÞÆ    Ç ›          ››››—{{›  —{{íüüüüí—›   ›››››í      ÆÅÇz6ÇÞÇÞGGGGGGGÞGgGGÇ
+ÇgGggGGGGGGGGGGggggÅz6ÇÇÆÆ      ›         ›››   —ííí—             ››z  ›  ÆG 6››GÆÆÅÅggggGggggGgGGGÇ
+ÇGGGGGGGGGGGGGGGGGgGÞgG6gÆÆÇ    ›                                 ›{›     ÆÆ{ 6gí›{gGgGGgGGGGGGgGGG6
+ÇGGGGGGGGGGGGGGGGGGGgggÅGgÆÆÆÆÆ  í        › ——————›—›———{—››››     {   Æ ÞÅÆÆGÞÅÅÅÅÅGggggGGGGGGgGGGÇ
+ÇÞGGÞGGGGGGGGGGgGGGGgGgggÅGgÆÆÆÏ  ›                              ›››   ÆÆÆggÅÅÅÞggGGgGGGGGGGgGGGGGG6
+ÇGgÞgGGGÞGGGGGGGÞGGGGGGGGGÅÆÆG Å                                 ››   —ÆÆÆÅÅggGggGÞgGgGGGGgGGGGGGGG6
+6GGGGGGGGGGGGgGgGGGGGGGgÆÆÆÅ   Æ›                                    ›í  ÆÆÆgggggggggggGgGGGGGGGGGG6
+6GGGGGGGGGGÞGGÞÞGGGGGÅÆÆÆ      Æ›         ›››››››››››››››››        ›››üÇ   ÆÆggGGGgGGGGGGGGGGGGGGGGÇ
+6GGGGGGGGGGGGGGGGGÆÆÆÆÆ       ÏÅ—›      ›  ›——————›››››—›—›       › ››{Å    ÆÆÆÅgggGGGGGGGGGGGGGGGÞ6
+6GGÞGGÞGÞGGGGgÆÆÆÆÆ{          {Þ{—            › ›   ››    ›    › ››››››Þ      ÆÆÆÅGGGGGGGGGGGGGGÞGG6
+6GGGGGGGGGGÅÆÆÆÇ               Ç{››            ››   ››        ››› ›› ›—z        ÆÆÆÅGGGGGGGGGGGGGÞÞü
+6ÞÞGÅÆÆÆÆÆÆÆg                  üí››      ›                  ›   ››› ›››—          ÆÆÆÆGGGGÞGGGGGÞGG6
+ÆÆÆÆÆÆÏ                         {›        ›——›          ››››    ››››››››            6ÆÆÆÆgGGGGÞGGGÞü
+                                ››             ››› ›          ››  ›››››                ÆÆÆÆÆÅGGGGGGü
+                                                              ›››››››                      GÆÆÆÆgÞÞü
+                                                               › ››                           íÆÆÆÆÆ
+                                                              ››
+                                    ›                       ›   ››    ›
+                                      GÅG6z›                       —zz                              </pre>
+                </div>
+                <div class="ascii-footer">
+                    <span class="ascii-coords" id="ascii-coords">X:0 Y:0</span>
+                    <span class="ascii-format">UTF-8</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-header">
+            <span class="section-index">01</span>
+            <h2 class="section-title">ABOUT_</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <div class="terminal-block">
+                    <div class="terminal-header">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-title">profile.exe</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line"><span class="prompt">$</span> cat mission.txt</p>
+                        <p class="terminal-output">
+                            R&D Director and AI Architect with strong foundation in media management
+                            and multimedia technologies. Specializing in the fusion of generative AI
+                            engineering and high-end media production.
+                        </p>
+                        <p class="terminal-line"><span class="prompt">$</span> ./achievements --recent</p>
+                        <p class="terminal-output">
+                            → Launched 6+ international AI projects in 3 years<br>
+                            → Built scalable automation pipelines for leading creative agencies<br>
+                            → Head of AI Innovation Lab at Instinct Creative Agency [BBDO Group]
+                        </p>
+                        <p class="terminal-line"><span class="prompt">$</span> cat stack.txt</p>
+                        <p class="terminal-output">
+                            AI Agents / LLM Orchestration / Multimodal Models / Workflow Automation<br>
+                            Image Generation / Video Synthesis / TTS &amp; Audio / Lip Sync / Upscaling<br>
+                            Python / JavaScript / Node.js / React / HTML / CSS / REST APIs
+                        </p>
+                        <p class="terminal-line"><span class="prompt">$</span> cat approach.txt</p>
+                        <p class="terminal-output">
+                            Building AI-first production systems where every tool<br>
+                            serves a purpose. No hype — only measurable impact<br>
+                            on speed, cost, and creative output.
+                        </p>
+                        <p class="terminal-line"><span class="prompt">$</span> neofetch</p>
+                        <p class="terminal-output terminal-output--neofetch">
+                            <span class="neofetch-label">OS</span> Creative AI Systems v7.0<br>
+                            <span class="neofetch-label">Uptime</span> 7+ years in production<br>
+                            <span class="neofetch-label">Shell</span> strategy / r&d / hands-on<br>
+                            <span class="neofetch-label">Focus</span> GenAI / LLMs / Video / Audio<br>
+                            <span class="neofetch-label">Status</span> <span style="color: var(--vhs-green);">open to collaborate</span>
+                        </p>
+                        <p class="terminal-line terminal-line--cursor"><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-data">
+                <div class="data-block">
+                    <h3 class="data-title">EDUCATION_</h3>
+                    <div class="data-item">
+                        <span class="data-year">2020-2024</span>
+                        <span class="data-text">HSE University — Media Communications, Media Technologies Track</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-year">2024-2026</span>
+                        <span class="data-text">HSE University — Media Management, Company Management Track</span>
+                    </div>
+                </div>
+
+                <div class="data-block">
+                    <h3 class="data-title">EXPERIENCE_</h3>
+                    <div class="experience-timeline">
+                        <div class="exp-item">
+                            <span class="exp-date">2022-2026</span>
+                            <span class="exp-role">Founder & Lead AI R&D Architect</span>
+                            <span class="exp-company">International AI Projects</span>
+                        </div>
+                        <div class="exp-item">
+                            <span class="exp-date">2024-2025</span>
+                            <span class="exp-role">Head of AI Innovation Lab</span>
+                            <span class="exp-company">Instinct Creative Agency [BBDO]</span>
+                        </div>
+                        <div class="exp-item">
+                            <span class="exp-date">2023-2024</span>
+                            <span class="exp-role">Creative Director VFX & AI</span>
+                            <span class="exp-company">FMT.JETLAG / FollowMeTo</span>
+                        </div>
+                        <div class="exp-item">
+                            <span class="exp-date">2021-2023</span>
+                            <span class="exp-role">CEO & Founder</span>
+                            <span class="exp-company">Modern Vision</span>
+                        </div>
+                        <div class="exp-item">
+                            <span class="exp-date">2022-2023</span>
+                            <span class="exp-role">Lead AI Specialist</span>
+                            <span class="exp-company">Chicken Curry</span>
+                        </div>
+                        <div class="exp-item">
+                            <span class="exp-date">2021-2023</span>
+                            <span class="exp-role">Lead AI Specialist</span>
+                            <span class="exp-company">PopShot</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h3 class="skills-title">CORE_SYSTEMS_</h3>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="architecture">
+                    <div class="skill-icon">//</div>
+                    <span class="skill-name">GenAI Systems Architecture</span>
+                </div>
+                <div class="skill-card" data-skill="automation">
+                    <div class="skill-icon">&gt;&gt;</div>
+                    <span class="skill-name">AI Pipeline Automation</span>
+                </div>
+                <div class="skill-card" data-skill="product">
+                    <div class="skill-icon">::</div>
+                    <span class="skill-name">Product Strategy</span>
+                </div>
+                <div class="skill-card" data-skill="ml">
+                    <div class="skill-icon">&lt;/&gt;</div>
+                    <span class="skill-name">Applied ML & LLM Systems</span>
+                </div>
+                <div class="skill-card" data-skill="fullstack">
+                    <div class="skill-icon">{}</div>
+                    <span class="skill-name">Full-Stack AI Integration</span>
+                </div>
+                <div class="skill-card" data-skill="creative">
+                    <div class="skill-icon">##</div>
+                    <span class="skill-name">Executive Creative Direction</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brands Marquee -->
+        <div class="brands-section">
+            <h3 class="brands-title">TRUSTED_BY_</h3>
+            <div class="brands-marquee">
+                <div class="marquee-wrapper">
+                    <div class="marquee-track">
+                        <span class="brand">WILDBERRIES</span><span class="brand-dot">●</span>
+                        <span class="brand">YANDEX GO</span><span class="brand-dot">●</span>
+                        <span class="brand">YANDEX MUSIC</span><span class="brand-dot">●</span>
+                        <span class="brand">VKUSNO I TOCHKA</span><span class="brand-dot">●</span>
+                        <span class="brand">AVITO</span><span class="brand-dot">●</span>
+                        <span class="brand">MVIDEO</span><span class="brand-dot">●</span>
+                        <span class="brand">GAZPROMNEFT</span><span class="brand-dot">●</span>
+                        <span class="brand">HOBBY GAMES</span><span class="brand-dot">●</span>
+                        <span class="brand">NACHOS DELICADOS</span><span class="brand-dot">●</span>
+                        <span class="brand">MEGAFON</span><span class="brand-dot">●</span>
+                        <span class="brand">TINKOFF BANK</span><span class="brand-dot">●</span>
+                        <span class="brand">SHCHEBEKINSKIE</span><span class="brand-dot">●</span>
+                        <span class="brand">TRICOLOR TV</span><span class="brand-dot">●</span>
+                        <span class="brand">BRUSNIKA</span><span class="brand-dot">●</span>
+                        <span class="brand">KONTUR</span><span class="brand-dot">●</span>
+                        <span class="brand">ETIHAD AIRWAYS</span><span class="brand-dot">●</span>
+                        <span class="brand">ATLANTIS RESORTS</span><span class="brand-dot">●</span>
+                        <span class="brand">BINANCE</span><span class="brand-dot">●</span>
+                        <span class="brand">YOTA</span><span class="brand-dot">●</span>
+                        <span class="brand">NESCAFE</span><span class="brand-dot">●</span>
+                        <span class="brand">NEOM</span><span class="brand-dot">●</span>
+                        <span class="brand">CATRICE</span><span class="brand-dot">●</span>
+                        <span class="brand">MERCEDES-BENZ</span><span class="brand-dot">●</span>
+                        <span class="brand">REISS</span><span class="brand-dot">●</span>
+                        <span class="brand">GENERAL AGENTS</span><span class="brand-dot">●</span>
+                        <span class="brand">PAMPERS</span><span class="brand-dot">●</span>
+                        <span class="brand">LIBRESSE</span><span class="brand-dot">●</span>
+                        <span class="brand">ELDORADO</span><span class="brand-dot">●</span>
+                        <span class="brand">MAJID AL FUTTAIM</span><span class="brand-dot">●</span>
+                        <span class="brand">RED BULL</span><span class="brand-dot">●</span>
+                    </div>
+                    <div class="marquee-track" aria-hidden="true">
+                        <span class="brand">WILDBERRIES</span><span class="brand-dot">●</span>
+                        <span class="brand">YANDEX GO</span><span class="brand-dot">●</span>
+                        <span class="brand">YANDEX MUSIC</span><span class="brand-dot">●</span>
+                        <span class="brand">VKUSNO I TOCHKA</span><span class="brand-dot">●</span>
+                        <span class="brand">AVITO</span><span class="brand-dot">●</span>
+                        <span class="brand">MVIDEO</span><span class="brand-dot">●</span>
+                        <span class="brand">GAZPROMNEFT</span><span class="brand-dot">●</span>
+                        <span class="brand">HOBBY GAMES</span><span class="brand-dot">●</span>
+                        <span class="brand">NACHOS DELICADOS</span><span class="brand-dot">●</span>
+                        <span class="brand">MEGAFON</span><span class="brand-dot">●</span>
+                        <span class="brand">TINKOFF BANK</span><span class="brand-dot">●</span>
+                        <span class="brand">SHCHEBEKINSKIE</span><span class="brand-dot">●</span>
+                        <span class="brand">TRICOLOR TV</span><span class="brand-dot">●</span>
+                        <span class="brand">BRUSNIKA</span><span class="brand-dot">●</span>
+                        <span class="brand">KONTUR</span><span class="brand-dot">●</span>
+                        <span class="brand">ETIHAD AIRWAYS</span><span class="brand-dot">●</span>
+                        <span class="brand">ATLANTIS RESORTS</span><span class="brand-dot">●</span>
+                        <span class="brand">BINANCE</span><span class="brand-dot">●</span>
+                        <span class="brand">YOTA</span><span class="brand-dot">●</span>
+                        <span class="brand">NESCAFE</span><span class="brand-dot">●</span>
+                        <span class="brand">NEOM</span><span class="brand-dot">●</span>
+                        <span class="brand">CATRICE</span><span class="brand-dot">●</span>
+                        <span class="brand">MERCEDES-BENZ</span><span class="brand-dot">●</span>
+                        <span class="brand">REISS</span><span class="brand-dot">●</span>
+                        <span class="brand">GENERAL AGENTS</span><span class="brand-dot">●</span>
+                        <span class="brand">PAMPERS</span><span class="brand-dot">●</span>
+                        <span class="brand">LIBRESSE</span><span class="brand-dot">●</span>
+                        <span class="brand">ELDORADO</span><span class="brand-dot">●</span>
+                        <span class="brand">MAJID AL FUTTAIM</span><span class="brand-dot">●</span>
+                        <span class="brand">RED BULL</span><span class="brand-dot">●</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glasses with Eye Tracking -->
+    <div class="glasses-section" id="glasses-section">
+        <div class="glasses-wrapper">
+            <img src="glasses.png" alt="" class="glasses-img" />
+            <div class="eye eye--left" id="eye-left">
+                <div class="eye-core" id="pupil-left">
+                    <div class="eye-ring eye-ring--outer"></div>
+                    <div class="eye-ring eye-ring--mid"></div>
+                    <div class="eye-ring eye-ring--inner"></div>
+                    <div class="eye-pupil"></div>
+                    <div class="eye-crosshair eye-crosshair--h"></div>
+                    <div class="eye-crosshair eye-crosshair--v"></div>
+                    <div class="eye-scanline"></div>
+                </div>
+            </div>
+            <div class="eye eye--right" id="eye-right">
+                <div class="eye-core" id="pupil-right">
+                    <div class="eye-ring eye-ring--outer"></div>
+                    <div class="eye-ring eye-ring--mid"></div>
+                    <div class="eye-ring eye-ring--inner"></div>
+                    <div class="eye-pupil"></div>
+                    <div class="eye-crosshair eye-crosshair--h"></div>
+                    <div class="eye-crosshair eye-crosshair--v"></div>
+                    <div class="eye-scanline"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-header">
+            <span class="section-index">02</span>
+            <h2 class="section-title">PROJECTS_</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Storyliner AI -->
+            <article class="project-card project-card--featured" data-project="storyliner">
+                <div class="project-frame">
+                    <div class="project-status">
+                        <span class="status-live"></span>
+                        <span>LIVE</span>
+                    </div>
+                    <div class="project-index">01</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">STORYLINER_AI</h3>
+                    <p class="project-role">Founder & CTO</p>
+                    <p class="project-desc">
+                        Automated storyboard generation system for film and advertising.
+                        Transform scripts into visual narratives with AI.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">GENERATIVE AI</span>
+                        <span class="tag">FILM PRODUCTION</span>
+                        <span class="tag">AUTOMATION</span>
+                    </div>
+                    <a href="https://www.storyliner.online/" target="_blank" class="project-link">
+                        <span class="link-text">LAUNCH PROJECT</span>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="visual-noise"></div>
+                </div>
+            </article>
+
+            <!-- StickerPunk -->
+            <article class="project-card" data-project="stickerpunk">
+                <div class="project-frame">
+                    <div class="project-status">
+                        <span class="status-live"></span>
+                        <span>LIVE</span>
+                    </div>
+                    <div class="project-index">02</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">STICKERPUNK_AI</h3>
+                    <p class="project-role">Founder & Product Lead</p>
+                    <p class="project-desc">
+                        Conversational AI agent for automatic generation of ready-to-use
+                        sticker packs in Telegram.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">CONVERSATIONAL AI</span>
+                        <span class="tag">TELEGRAM</span>
+                        <span class="tag">GENERATIVE</span>
+                    </div>
+                    <a href="https://stickerpunk-7fe27ab6a9b7.herokuapp.com/" target="_blank" class="project-link">
+                        <span class="link-text">LAUNCH PROJECT</span>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="visual-noise"></div>
+                </div>
+            </article>
+
+            <!-- Vision Insight AI -->
+            <article class="project-card" data-project="vision">
+                <div class="project-frame">
+                    <div class="project-status">
+                        <span class="status-dev"></span>
+                        <span>art-proto.com</span>
+                    </div>
+                    <div class="project-index">03</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">VISION_INSIGHT_AI</h3>
+                    <p class="project-role">Author & CTO</p>
+                    <p class="project-desc">
+                        AI-powered strategic video analysis tool. Automated deep analysis
+                        of advertising video content.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">VIDEO ANALYSIS</span>
+                        <span class="tag">STRATEGY</span>
+                        <span class="tag">MARKETING</span>
+                    </div>
+                    <a href="#" class="project-link project-link--internal">
+                        <span class="link-text">VIEW DETAILS</span>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="visual-noise"></div>
+                </div>
+            </article>
+
+            <!-- Trender AI -->
+            <article class="project-card" data-project="trender">
+                <div class="project-frame">
+                    <div class="project-status">
+                        <span class="status-dev"></span>
+                        <span>art-proto.com</span>
+                    </div>
+                    <div class="project-index">04</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">TRENDER_AI</h3>
+                    <p class="project-role">R&D Lead</p>
+                    <p class="project-desc">
+                        AI Trend-to-Brand Engine. Marketing text generation system
+                        based on real-time trend analysis.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">TREND ANALYSIS</span>
+                        <span class="tag">MARKETING</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                    <a href="#" class="project-link project-link--internal">
+                        <span class="link-text">VIEW DETAILS</span>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="visual-noise"></div>
+                </div>
+            </article>
+
+            <!-- AI Listing Studio -->
+            <article class="project-card" data-project="listing">
+                <div class="project-frame">
+                    <div class="project-status">
+                        <span class="status-dev"></span>
+                        <span>art-proto.com</span>
+                    </div>
+                    <div class="project-index">05</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AI_LISTING_STUDIO</h3>
+                    <p class="project-role">Author & R&D Lead</p>
+                    <p class="project-desc">
+                        System for creating high-converting e-commerce listings.
+                        AI-powered product description generation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">E-COMMERCE</span>
+                        <span class="tag">COPYWRITING</span>
+                        <span class="tag">AUTOMATION</span>
+                    </div>
+                    <a href="#" class="project-link project-link--internal">
+                        <span class="link-text">VIEW DETAILS</span>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="visual-noise"></div>
+                </div>
+            </article>
+
+            <!-- Voice Sales Assistant -->
+            <article class="project-card project-card--featured" data-project="voice">
+                <div class="project-frame">
+                    <div class="project-status">
+                        <span class="status-dev"></span>
+                        <span>art-proto.com</span>
+                    </div>
+                    <div class="project-index">06</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">VOICE_SALES_AI</h3>
+                    <p class="project-role">Author & Developer</p>
+                    <p class="project-desc">
+                        Conversational AI for e-commerce. Real-time voice product
+                        consultations and website navigation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">VOICE AI</span>
+                        <span class="tag">E-COMMERCE</span>
+                        <span class="tag">REAL-TIME</span>
+                    </div>
+                    <a href="#" class="project-link project-link--internal">
+                        <span class="link-text">VIEW DETAILS</span>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+                <div class="project-visual">
+                    <div class="visual-noise"></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <span class="section-index">03</span>
+            <h2 class="section-title">CONTACT_</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-cta">
+                <div class="cta-code-line"><span class="cta-comment">// initializing collaboration protocol...</span></div>
+                <h3 class="cta-title" data-text="LET'S BUILD THE FUTURE_">LET'S BUILD THE FUTURE_</h3>
+                <div class="cta-code-line"><span class="cta-fn">function</span> <span class="cta-name">nextProject</span>() { <span class="cta-return">return</span> <span class="cta-str">"something amazing"</span> }</div>
+                <p class="cta-text">
+                    Ready to transform your production pipeline with AI?
+                    Let's discuss your next project.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <a href="mailto:jetpackssk@gmail.com" class="contact-card">
+                    <span class="contact-icon">[&gt;]</span>
+                    <span class="contact-label">EMAIL</span>
+                    <span class="contact-value">jetpackssk@gmail.com</span>
+                </a>
+                <a href="https://t.me/mcqx4" target="_blank" class="contact-card">
+                    <span class="contact-icon">[~]</span>
+                    <span class="contact-label">TELEGRAM</span>
+                    <span class="contact-value">mcqx4</span>
+                </a>
+                <a href="tel:+79167772624" class="contact-card">
+                    <span class="contact-icon">[#]</span>
+                    <span class="contact-label">PHONE</span>
+                    <span class="contact-value">+7 916 777 26 24</span>
+                </a>
+                <div class="contact-card contact-card--location">
+                    <span class="contact-icon">[*]</span>
+                    <span class="contact-label">LOCATION</span>
+                    <span class="contact-value">Worldwide | US | France | Russia</span>
+                </div>
+            </div>
+
+            <div class="contact-languages">
+                <div class="lang-item">
+                    <span class="lang-name">ENGLISH</span>
+                    <div class="lang-bar">
+                        <div class="lang-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="lang-level">C1</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">RUSSIAN</span>
+                    <div class="lang-bar">
+                        <div class="lang-fill" style="width: 100%"></div>
+                    </div>
+                    <span class="lang-level">NATIVE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">ART_PROTO</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            <div class="footer-info">
+                <span class="footer-year">© 2026</span>
+                <span class="footer-divider">|</span>
+                <span class="footer-domain">art-proto.com</span>
+            </div>
+            <div class="footer-status">
+                <span class="status-dot"></span>
+                <span>ALL SYSTEMS OPERATIONAL</span>
+            </div>
+        </div>
+        <div class="footer-line">
+            <div class="line-animation"></div>
+        </div>
+    </footer>
+
+    <!-- Voice Agent Widget -->
+    <div class="ai-widget" id="voice-agent">
+        <button class="ai-toggle" id="voice-toggle" aria-label="Talk to AI Assistant">
+            <div class="ai-toggle-icon">
+                <span class="toggle-ring"></span>
+                <span class="toggle-core"></span>
+            </div>
+            <span class="ai-toggle-label">AI AGENT</span>
+        </button>
+
+        <div class="ai-chat" id="voice-panel">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-indicator" id="voice-status-dot"></span>
+                    <span class="status-text" id="voice-status-text">PROTO_AI // READY</span>
+                </div>
+                <button class="chat-close" id="voice-panel-close">×</button>
+            </div>
+
+            <div class="voice-visualizer">
+                <canvas class="voice-canvas" id="voice-canvas" width="340" height="100"></canvas>
+                <div class="voice-mode" id="voice-mode"></div>
+            </div>
+
+            <div class="voice-transcript" id="voice-transcript"></div>
+
+            <div class="voice-controls">
+                <button class="voice-btn voice-btn--call" id="voice-call" title="Start conversation">
+                    <span class="voice-btn-icon" id="voice-call-icon">START</span>
+                </button>
+                <button class="voice-btn voice-btn--mute" id="voice-mute" title="Mute mic" disabled>
+                    <span class="voice-btn-icon">MIC</span>
+                </button>
+                <button class="voice-btn voice-btn--end" id="voice-end" title="End conversation" disabled>
+                    <span class="voice-btn-icon">END</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.js"></script>
+    <script>window.livekitClient = window.LivekitClient;</script>
+    <script src="https://cdn.jsdelivr.net/npm/@elevenlabs/client@latest/dist/lib.umd.js"></script>
+    <script src="script.js?v=10"></script>
+</body>
+</html>
