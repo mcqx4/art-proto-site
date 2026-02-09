@@ -184,9 +184,11 @@ class SmoothScroll {
 
     bindEvents() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            const href = anchor.getAttribute('href');
+            if (href === '#') return; // skip bare # links
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
