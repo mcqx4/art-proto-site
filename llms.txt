@@ -1,0 +1,56 @@
+# Artem Protasov (ART PROTO)
+
+> Head of AI Innovations, R&D Director and Chief AI Officer (CAIO) with 6+ years building generative-AI products. Has shipped 8+ AI products from 0→1 to profitability. Open to Head of AI / R&D Director / CAIO roles with US or EU relocation, visa sponsorship, and remote work.
+
+## Summary
+
+Artem Protasov is an AI engineer and leader who pairs an engineer's depth with a founder's instinct. He sets AI strategy and personally architects the systems behind it — multi-agent systems, RAG pipelines and generative engines — and takes products all the way from idea to architecture to production. His focus is measurable impact on speed, cost and creative output rather than demos.
+
+## Expertise
+
+- AI strategy and AI leadership (CAIO / Head of AI / R&D Director)
+- AI agents and multi-agent (autonomous) systems
+- RAG architectures, LLM orchestration, Model Context Protocol (MCP)
+- Prompt and context engineering
+- Generative image and video pipelines, TTS and audio, lip sync, upscaling, FFmpeg post-production
+- Backend & infrastructure: Python, TypeScript, FastAPI, Flask, SQLAlchemy, React, Node.js, vector databases (Qdrant, Milvus, pgvector), PostgreSQL, Redis, Docker, MLOps / LLMOps
+- 0→1 product launches, unit economics and monetization, B2B/B2C platform growth
+
+## Key achievements
+
+- Cut creative production costs ~40–45% at BBDO Group while shipping creative 3–4× faster.
+- Brought a B2B AI platform to profitability from scratch: 50+ external data sources unified, +35% partner sales on average.
+- Founded and scaled 8+ AI products from 0→1, including autonomous agents that close deals end to end.
+
+## Selected projects
+
+- [StoryLiner AI](https://www.storyliner.online/): automated storyboard generation for film and advertising — scripts into visual narratives with AI.
+- [Promotron AI](https://promotron.art-proto.com/): autonomous AI video-marketing engine that generates, edits and publishes short-form video to TikTok, Shorts and Reels.
+- [Vision Insight AI](https://video.art-proto.com/): AI-powered strategic analysis of advertising video content.
+- [Trender AI](https://trender.art-proto.com/): AI trend-to-brand engine for marketing text from real-time trend analysis.
+- [AI Listing Studio](https://listing.art-proto.com/): high-converting e-commerce listing and product-description generation.
+- [StickerPunk AI](https://t.me/Sticker_Punk_bot): conversational AI agent generating sticker packs in Telegram.
+- [VSUDU](https://vsudu.com/?lang=en): online travel marketplace with AI matching.
+- [AccompParts](https://accomparts.com/): multichain decentralized platform for curating and auctioning computer art with smart contracts.
+
+## Brands & collaborations
+
+Adobe, Amazon, ByteDance (TikTok), Yandex, Etihad Airways, Binance, General Agents, NASA, and BBDO Group (Instinct Creative Agency).
+
+## Education
+
+- HSE University (Higher School of Economics), Moscow — Master's, Media Management (2026).
+- HSE University (Higher School of Economics), Moscow — Bachelor's, Media Communications (2024).
+
+## Languages
+
+- English — C1
+- Russian — Native
+
+## Contact
+
+- Website: https://art-proto.com
+- Email: protasov.artem@outlook.com
+- Telegram: https://t.me/mcqx4
+- CV (PDF): https://art-proto.com/Artem_Protasov_Head_of_AI_CV_EN.pdf
+- Availability: open to US/EU relocation, visa sponsorship, and remote.

@@ -1,0 +1,19 @@
+{
+  "name": "Artem Protasov — ART PROTO",
+  "short_name": "ART PROTO",
+  "description": "Head of AI, R&D Director & CAIO — generative-AI products, multi-agent systems and LLM architecture.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "931x1008",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

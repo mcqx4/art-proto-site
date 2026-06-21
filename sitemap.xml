@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://art-proto.com/</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://art-proto.com/OG.png</image:loc>
+      <image:title>Artem Protasov — Head of AI, R&amp;D Director &amp; CAIO</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://art-proto.com/Artem_Protasov_Head_of_AI_CV_EN.pdf</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

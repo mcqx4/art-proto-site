@@ -3,6 +3,7 @@
 .idea/
 *.txt
 !robots.txt
+!llms.txt
 *.backup
 *.bak*
 check.html

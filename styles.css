@@ -904,6 +904,14 @@ section {
     padding: var(--space-lg);
 }
 
+/* Last data block (EXPERIENCE) stretches so its bottom always
+   aligns with the terminal block on the left, regardless of content */
+.about-data .data-block:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .data-title {
     font-family: var(--font-display);
     font-size: 1.25rem;
@@ -940,6 +948,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+    flex: 1;
+    justify-content: space-between;
 }
 
 .exp-item {
@@ -1277,6 +1287,7 @@ section {
    ============================================ */
 
 .projects {
+    padding-bottom: var(--space-lg);
     background:
         repeating-linear-gradient(
             0deg,
@@ -1309,6 +1320,7 @@ section {
     border: 1px solid var(--accent-dim);
     overflow: hidden;
     transition: all var(--transition-base);
+    cursor: pointer;
 }
 
 .project-card:hover {
@@ -1545,7 +1557,7 @@ section {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-md);
     margin-bottom: var(--space-xl);
 }
@@ -1561,6 +1573,7 @@ section {
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
+    min-width: 0;
 }
 
 .contact-card > * {
@@ -1570,8 +1583,13 @@ section {
 
 .contact-card:hover {
     border-color: var(--accent-primary);
-    transform: translateY(-4px);
     background: var(--bg-elevated);
+    box-shadow: inset 0 0 0 1px var(--accent-primary),
+                inset 0 0 36px -12px var(--accent-primary);
+}
+
+.contact-value {
+    overflow-wrap: anywhere;
 }
 
 .contact-icon {
@@ -2139,13 +2157,63 @@ section {
 
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
 }
 
+/* Premium reveal — uses animation (not a locked transform) so card
+   hover effects keep working after the element has appeared. */
 .fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
+    animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@keyframes revealUp {
+    0% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.96);
+        filter: blur(10px);
+    }
+    60% {
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Staggered cascade for grids — children ripple in one after another */
+.skills-grid .skill-card.visible { animation-delay: calc((var(--stagger, 0)) * 1ms); }
+.skill-card:nth-child(1) { --stagger: 0; }
+.skill-card:nth-child(2) { --stagger: 70; }
+.skill-card:nth-child(3) { --stagger: 140; }
+.skill-card:nth-child(4) { --stagger: 210; }
+.skill-card:nth-child(5) { --stagger: 280; }
+.skill-card:nth-child(6) { --stagger: 350; }
+
+.projects-grid .project-card.visible { animation-delay: calc((var(--stagger, 0)) * 1ms); }
+.project-card:nth-child(1) { --stagger: 0; }
+.project-card:nth-child(2) { --stagger: 80; }
+.project-card:nth-child(3) { --stagger: 160; }
+.project-card:nth-child(4) { --stagger: 80; }
+.project-card:nth-child(5) { --stagger: 160; }
+.project-card:nth-child(6) { --stagger: 80; }
+.project-card:nth-child(7) { --stagger: 160; }
+
+.contact-grid .contact-card.visible { animation-delay: calc((var(--stagger, 0)) * 1ms); }
+.contact-card:nth-child(1) { --stagger: 0; }
+.contact-card:nth-child(2) { --stagger: 90; }
+.contact-card:nth-child(3) { --stagger: 180; }
+.contact-card:nth-child(4) { --stagger: 270; }
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .fade-in.visible {
+        opacity: 1;
+        animation: none;
+        filter: none;
+        transform: none;
+    }
 }
 
 /* Glitch text effect */

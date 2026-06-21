@@ -207,7 +207,8 @@ class SmoothScroll {
 class ScrollAnimations {
     constructor() {
         this.elements = document.querySelectorAll(
-            '.section-header, .terminal-block, .data-block, .skill-card, .project-card, .contact-card'
+            '.section-header, .terminal-block, .data-block, .skill-card, .project-card, .contact-card, ' +
+            '.skills-title, .brands-section, .contact-cta, .contact-languages'
         );
         this.init();
     }
@@ -304,7 +305,22 @@ class ProjectCards {
         this.cards.forEach(card => {
             card.addEventListener('mousemove', (e) => this.handleMove(e, card));
             card.addEventListener('mouseleave', (e) => this.handleLeave(e, card));
+            card.addEventListener('click', (e) => this.handleClick(e, card));
         });
+    }
+
+    handleClick(e, card) {
+        // Не перехватываем родной клик по самой ссылке — она сработает сама
+        if (e.target.closest('a')) return;
+
+        const link = card.querySelector('.project-link');
+        if (!link || !link.href) return;
+
+        if (link.target === '_blank') {
+            window.open(link.href, '_blank', 'noopener');
+        } else {
+            window.location.href = link.href;
+        }
     }
 
     handleMove(e, card) {
@@ -688,7 +704,7 @@ class CursorTrail {
 
 class MagneticButtons {
     constructor() {
-        this.buttons = document.querySelectorAll('.project-link, .contact-card, .ai-toggle');
+        this.buttons = document.querySelectorAll('.project-link, .ai-toggle');
         this.bindEvents();
     }
 
