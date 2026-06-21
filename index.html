@@ -955,7 +955,9 @@ GÅÅÅÆÆÆÆÆÆgÅgz —Æz {{                         ››{üííí{—  
 
     <script src="https://cdn.jsdelivr.net/npm/livekit-client@2.19.2/dist/livekit-client.umd.js" integrity="sha384-bLjV1t5nl84HublK1kvShvGqp9KTXsQSx4d2QV3alRC0iqPqCNTBmF4eEnMPJ0Uh" crossorigin="anonymous"></script>
     <script>window.livekitClient = window.LivekitClient;</script>
-    <script src="https://cdn.jsdelivr.net/npm/@elevenlabs/client@1.12.0/dist/lib.umd.js" integrity="sha384-+HlkuY6O7coKx/Zq8S3nRO4r4mGfAMZiyFUD1e9vXEFKQmR/XEkKbywatfzlpc9e" crossorigin="anonymous"></script>
+    <!-- ElevenLabs Conversational AI SDK — self-hosted, same-origin (vendored UMD snapshot).
+         Current npm versions dropped the UMD build, so this is pinned locally: no CDN/supply-chain dependency, no SRI needed. -->
+    <script src="/elevenlabs-client.umd.js"></script>
     <script src="script.js?v=12"></script>
 </body>
 </html>
