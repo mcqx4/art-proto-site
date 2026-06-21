@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Signal Lost | ART PROTO</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        :root { --bg: #050816; --accent: #00d4ff; --text: #c8d0e0; --muted: #5a6582; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            background:
+                radial-gradient(circle at 50% 30%, rgba(0,212,255,0.08), transparent 60%),
+                var(--bg);
+            color: var(--text);
+            font-family: "Space Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+            display: flex; align-items: center; justify-content: center;
+            min-height: 100%; padding: 2rem; text-align: center;
+            overflow: hidden;
+        }
+        body::after {
+            content: ""; position: fixed; inset: 0; pointer-events: none;
+            background: repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 3px);
+        }
+        .wrap { max-width: 560px; position: relative; z-index: 1; }
+        .code {
+            font-size: clamp(5rem, 22vw, 11rem); font-weight: 700; line-height: 1;
+            color: var(--accent); letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(0,212,255,0.35);
+        }
+        .tag { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1.25rem; }
+        .msg { font-size: 1.05rem; margin: 1.25rem 0 0.4rem; }
+        .msg .accent { color: var(--accent); }
+        .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+        .home {
+            display: inline-block; text-decoration: none; color: var(--accent);
+            border: 1px solid rgba(0,212,255,0.4); padding: 0.7rem 1.6rem;
+            font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .home:hover { background: rgba(0,212,255,0.1); border-color: var(--accent); }
+        .blink { animation: blink 1s step-end infinite; }
+        @keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <div class="tag">[ ART_PROTO ]</div>
+        <div class="code">404</div>
+        <p class="msg">&gt; SIGNAL LOST<span class="blink">_</span></p>
+        <p class="sub">This route doesn't exist on the grid.</p>
+        <a class="home" href="/">← Return to base</a>
+    </main>
+</body>
+</html>

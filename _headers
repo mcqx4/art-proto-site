@@ -7,7 +7,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), payment=(), usb=(), microphone=(self)
   Cross-Origin-Opener-Policy: same-origin-allow-popups
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https:; worker-src 'self' blob:; connect-src 'self' https: wss:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-b1EeTctlaVcmlfe/qHOHOl+BWDdDJ6fjkgmJaX8Vx4A=' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https:; worker-src 'self' blob:; connect-src 'self' https: wss:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests
 
 # Long-cache immutable static assets (perf, no security impact)
 /*.png
