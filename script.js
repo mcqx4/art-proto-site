@@ -514,7 +514,12 @@ class VoiceAgent {
         const line = document.createElement('div');
         line.className = `voice-transcript-line voice-transcript-line--${type}`;
         const label = type === 'agent' ? 'PROTO_AI' : 'YOU';
-        line.innerHTML = `<span class="voice-transcript-label">${label}</span>${text}`;
+        // Build with text nodes — never interpolate untrusted transcript text into innerHTML (XSS)
+        const labelEl = document.createElement('span');
+        labelEl.className = 'voice-transcript-label';
+        labelEl.textContent = label;
+        line.appendChild(labelEl);
+        line.appendChild(document.createTextNode(text));
         this.transcript.appendChild(line);
         this.transcript.scrollTop = this.transcript.scrollHeight;
     }
